@@ -1,4 +1,3 @@
-// قاعدة بيانات شاملة لخدمات أبشر
 export const absherServices = {
 traffic: {
 name: ‘خدمات المرور’,
