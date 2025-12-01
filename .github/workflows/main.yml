@@ -23,8 +23,10 @@ jobs:
     - name: Build
       run: npm run build
       
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+    - name: Build the app
+  run: npm run build
+  env:
+    # هذا السطر هو الأهم: يمرر المفتاح إلى مرحلة البناء
+    REACT_APP_OPENAI_API_KEY: ${{ secrets.REACT_APP_OPENAI_API_KEY }} 
+
+     - name: Deploy to GitHub Pages
