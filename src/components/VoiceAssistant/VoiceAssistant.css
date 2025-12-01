@@ -1,17 +1,131 @@
+/* اللون الأساسي لأبشر (قيمة تقديرية للون الأخضر الاحترافي): #00806D */
+:root {
+  --absher-green: #00806D; 
+  --absher-green-light: #00A39C; /* لون أفتح لبعض العناصر */
+  --text-color: #333;
+  --bg-color: #f7f7f7;
+}
+
+/* تعيين الخلفية الخضراء للصفحة بالكامل */
+body {
+  background-color: var(--absher-green); 
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  /* التأكد من استخدام خاصية dir للتوافق مع اللغة العربية */
+  direction: rtl; 
+}
+
+/* تنسيق الحاوية الرئيسية للتطبيق */
+.voice-assistant-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+}
+
+/* تنسيق شريط العنوان (العنوان) */
+.header {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1); 
+  padding: 20px 0;
+  text-align: center;
+  color: white; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+/* تنسيق واجهة المساعد الرئيسية */
+.voice-assistant {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  flex-grow: 1; 
+}
+
+/* منطقة الإدخال لتجميع الحقول والأزرار (بما في ذلك المايكروفون) */
+.input-area {
+    display: flex;
+    gap: 8px; 
+    align-items: center;
+}
+
+.input-area input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1em;
+    outline: none;
+    /* التأكد من محاذاة النص داخل الحقل ليتوافق مع اللغة العربية */
+    text-align: right; 
+}
+
+.input-area button {
+    background-color: var(--absher-green-light);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.input-area button:hover {
+    background-color: #006b5a;
+}
+
+/* تنسيق زر المايكروفون لتسهيل تمييزه */
+.mic-button {
+    background-color: #00C896 !important; /* لون مختلف قليلاً للمايكروفون */
+}
+
+.mic-button:hover {
+    background-color: #00A39C !important;
+}
+
+/* تنسيق منطقة الاستجابة */
 .response {
   margin-top: 20px;
-  font-weight: bold;
-  white-space: pre-wrap;
+  padding: 15px;
+  background-color: #e8f9f7;
+  border: 1px solid var(--absher-green-light);
+  border-radius: 8px;
+  min-height: 50px;
+  color: var(--text-color);
+  line-height: 1.6;
+  text-align: right; 
+}
+
+/* تنسيق التذييل (Footer) */
+.footer {
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.1); 
+  color: white;
+  text-align: left; /* وضع النص في الزاوية اليسرى */
+  font-size: 0.8em;
+  margin-top: auto;
 }
 
 .cursor {
-  display: inline-block;
-  margin-left: 2px;
-  animation: blink 1s infinite;
+  animation: blink 0.7s infinite;
 }
 
 @keyframes blink {
   0% { opacity: 1; }
   50% { opacity: 0; }
   100% { opacity: 1; }
-}
