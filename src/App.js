@@ -1,16 +1,11 @@
 import React from 'react';
-import './App.css';
 import VoiceAssistant from './components/VoiceAssistant/VoiceAssistant';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Absher Voice Assistant</h1>
-      </header>
-      <main>
-        <VoiceAssistant />
-      </main>
+      <VoiceAssistant />
     </div>
   );
 }
