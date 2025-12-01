@@ -5,8 +5,12 @@ import VoiceAssistant from './components/VoiceAssistant/VoiceAssistant';
 function App() {
   return (
     <div className="App">
-      <h1>Absher Voice Assistant</h1>
-      <VoiceAssistant />
+      <header className="App-header">
+        <h1>Absher Voice Assistant</h1>
+      </header>
+      <main>
+        <VoiceAssistant />
+      </main>
     </div>
   );
 }
