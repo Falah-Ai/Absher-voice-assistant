@@ -4,6 +4,7 @@ import './VoiceAssistant.css';
 function VoiceAssistant() {
   const [message, setMessage] = useState('');
   const [response, setResponse] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
 
   const handleInputChange = (e) => {
     setMessage(e.target.value);
@@ -12,7 +13,8 @@ function VoiceAssistant() {
   const handleSend = async () => {
     if (!message.trim()) return;
 
-    setResponse('Thinking...');
+    setResponse('');
+    setIsTyping(true);
 
     try {
       const res = await fetch('/api/ask', {
@@ -22,10 +24,22 @@ function VoiceAssistant() {
       });
 
       const data = await res.json();
-      setResponse(data.answer || 'No response received.');
+      const fullAnswer = data.answer || 'No response received.';
+
+      // Typing effect: reveal text gradually
+      let i = 0;
+      const interval = setInterval(() => {
+        setResponse((prev) => prev + fullAnswer.charAt(i));
+        i++;
+        if (i >= fullAnswer.length) {
+          clearInterval(interval);
+          setIsTyping(false);
+        }
+      }, 40); // speed in ms per character
     } catch (error) {
       console.error('Error:', error);
       setResponse('An error occurred while processing your request.');
+      setIsTyping(false);
     }
   };
 
@@ -39,7 +53,10 @@ function VoiceAssistant() {
         placeholder="Type your question..."
       />
       <button onClick={handleSend}>Send</button>
-      <div className="response">{response}</div>
+      <div className="response">
+        {isTyping ? <span className="cursor">▌</span> : null}
+        {response}
+      </div>
     </div>
   );
 }
