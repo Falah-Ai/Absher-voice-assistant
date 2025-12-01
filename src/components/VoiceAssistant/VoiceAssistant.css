@@ -1,22 +1,17 @@
-.voice-assistant {
-  padding: 20px;
-  max-width: 600px;
-  margin: auto;
-  text-align: center;
-}
-
-.voice-assistant input {
-  width: 80%;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.voice-assistant button {
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
 .response {
   margin-top: 20px;
   font-weight: bold;
+  white-space: pre-wrap;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
