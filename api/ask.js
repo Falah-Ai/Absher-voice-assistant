@@ -5,21 +5,19 @@ export default async function handler(req, res) {
   }
 
   const { query } = req.body;
-
   if (!query) {
     return res.status(400).json({ error: 'Missing query' });
   }
 
   try {
-    // Call OpenAI API
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`, // set in Vercel env
+        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`, // ✅ Securely stored in Vercel
       },
       body: JSON.stringify({
-        model: "gpt-4o-mini", // or "gpt-4.1" depending on your plan
+        model: "gpt-4o-mini", // lightweight, fast model
         messages: [
           { role: "system", content: "You are Absher Voice Assistant, helping with Saudi government services." },
           { role: "user", content: query }
