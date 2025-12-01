@@ -12,13 +12,12 @@ function VoiceAssistant() {
   const handleSend = async () => {
     if (!message.trim()) return;
 
+    setResponse('Thinking...');
+
     try {
-      // Replace with your actual API endpoint
-      const res = await fetch('https://your-api-endpoint.com/ask', {
+      const res = await fetch('/api/ask', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: message }),
       });
 
