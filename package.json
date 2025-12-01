@@ -1,5 +1,6 @@
 {
   "name": "absher-voice-assistant",
+  "homepage": "https://falah-ai.github.io/Absher-voice-assistant"
   "version": "1.0.0",
   "description": "مساعد صوتي ذكي لخدمات أبشر الحكومية السعودية",
   "private": true,
