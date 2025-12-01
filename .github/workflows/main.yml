@@ -24,9 +24,8 @@ jobs:
       run: npm run build
       
     - name: Build the app
-  run: npm run build
-  env:
-    # هذا السطر هو الأهم: يمرر المفتاح إلى مرحلة البناء
-    REACT_APP_OPENAI_API_KEY: ${{ secrets.REACT_APP_OPENAI_API_KEY }} 
+      run: npm run build
+        env:
+          REACT_APP_OPENAI_API_KEY: ${{ secrets.REACT_APP_OPENAI_API_KEY }}
 
-     - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
