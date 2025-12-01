@@ -1,0 +1,15 @@
+# Dependencies
+/ node_modules
+/dist /build /out
+# Testing
+/ coverage
+# Environment variables
+* env
+* env. local
+* env. development. Local
+* env. production. local
+# Logs
+npm-debug. 1og*
+yarn-debug.log* yarn-error. log*
+* nuxt
+* next
