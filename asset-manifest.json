@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.7ba85374.css",
-    "main.js": "/static/js/main.09803e47.js",
-    "index.html": "/index.html",
-    "main.7ba85374.css.map": "/static/css/main.7ba85374.css.map",
-    "main.09803e47.js.map": "/static/js/main.09803e47.js.map"
+    "main.css": "/Absher-voice-assistant/static/css/main.7ba85374.css",
+    "main.js": "/Absher-voice-assistant/static/js/main.09803e47.js",
+    "index.html": "/Absher-voice-assistant/index.html",
+    "main.7ba85374.css.map": "/Absher-voice-assistant/static/css/main.7ba85374.css.map",
+    "main.09803e47.js.map": "/Absher-voice-assistant/static/js/main.09803e47.js.map"
   },
   "entrypoints": [
     "static/css/main.7ba85374.css",
