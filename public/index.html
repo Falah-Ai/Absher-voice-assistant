@@ -11,6 +11,22 @@
     />
     <title>Absher Voice Assistant</title>
   </head>
+  <button onclick="startListening()">🎤 اسأل</button>
+<p id="result"></p>
+
+<script>
+function startListening() {
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = "ar-SA";
+  recognition.start();
+
+  recognition.onresult = function(event) {
+    const text = event.results[0][0].transcript;
+    document.getElementById("result").innerText = "سؤالك: " + text;
+  };
+}
+</script>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
